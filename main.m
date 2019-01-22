@@ -1,5 +1,11 @@
 clear; close all; clc;
+% Update the global plot properties
 SetFigureDefaults(8,8);
+% Plot-axis size and ticks
+size_x = [-5 5];
+size_y = [-5 5];
+ticks_x = [-5 0 5];
+ticks_y = [-5 0 5];
 
 clear FlowElement;
 
@@ -98,8 +104,8 @@ for i = 1:100:t
         plot(tpos(:,1),tpos(:,2),'k-','linewidth',1);
     end
     hold off;
-    axis([-5 5 -5 5]);
-    yticks([-5 0 5]);
-    xticks([-5 0 5]);
+    axis([size_x size_y]);
+    yticks(ticks_x);
+    xticks(ticks_y);
     drawnow;
 end
